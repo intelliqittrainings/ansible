@@ -1,6 +1,6 @@
 ---
 - name: Create users on managed node
-  hosts: all
+  hosts: webserver
   tasks:
    - name: Create a user
      user:

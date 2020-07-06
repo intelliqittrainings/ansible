@@ -1,0 +1,16 @@
+---
+- name: Check if d1 directory is present if not create file d1
+  hosts: all
+  tasks:
+   - name: Check if d1 directory is present
+     stat: 
+      path: /tmp/d1
+     register: a
+   - name: Display output of the above module
+     debug:
+      var: a
+   - name: Create file d1 if directory d1 is not present
+     file:
+      name: /tmp/d1
+      state: touch
+     when: a.stat.exists == false

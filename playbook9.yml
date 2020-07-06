@@ -1,0 +1,10 @@
+---
+- name: Install firewalld using host scope variables
+  hosts: 172.31.37.220
+  tasks:
+   - name: Install firwall
+     apt:
+      name: "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}"
+

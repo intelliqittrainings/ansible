@@ -1,0 +1,11 @@
+---
+- name: create user with hostscope variables
+  hosts: webserver
+  tasks:
+   - name: Create users
+     user:
+      name: "{{a}}"
+      password: "{{b}}"
+      uid: "{{c}}"
+      home: "{{d}}"
+      shell: "{{e}}"
