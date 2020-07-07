@@ -1,0 +1,15 @@
+---
+- name: Error Handling
+  hosts: all
+  tasks:
+   - block: 
+      - name: Install vis apt module
+        apt:
+         name: apache2
+         state: present
+     rescue:
+      - name: Install via yum module
+        yum:
+         name: httpd
+         state: present
+...
