@@ -1,0 +1,6 @@
+---
+- name: Call child playbook to uninstall firewalld
+  hosts: all
+  tasks:
+   - name: call child playbook
+     include: playbook21.yml

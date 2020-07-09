@@ -1,0 +1,7 @@
+---
+- name: Uninstall firewalld
+  apt:
+   name: firewalld
+   state: absent
+   update_cache: yes
+...
