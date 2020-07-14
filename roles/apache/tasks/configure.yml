@@ -1,0 +1,7 @@
+---
+- name: Copy the idnex.html file
+  copy:
+   src: index.html
+   dest: /var/www/html
+  notify: Restart apache2
+

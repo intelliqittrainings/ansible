@@ -1,0 +1,6 @@
+---
+- name: Restart apache2
+  service:
+   name: "{{a}}"
+   state: "{{f}}"
+...

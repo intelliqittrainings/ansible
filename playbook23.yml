@@ -1,0 +1,6 @@
+---
+- name: Executing jenkins jobs using Python and Ansible
+  hosts: localhost
+  tasks:
+   - name: Execute the python script
+     shell: python /home/ubuntu/ansible/script.py
