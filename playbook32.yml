@@ -1,0 +1,6 @@
+- name: Initilise the docker swarm on manager
+  hosts: manager
+  tasks:
+   - name: Create docker swarm
+     docker_swarm:
+      state: present

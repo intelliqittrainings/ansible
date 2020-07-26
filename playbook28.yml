@@ -1,0 +1,23 @@
+---
+- name: Creating jenkins-tomcat setup for  CI-CD using docker/ansible
+  hosts: all
+  tasks:
+   - name: Create a jenkins contianer
+     docker_container:
+      image: jenkins
+      name: myjenkins
+      ports:
+       - 5050:8080
+
+   - name: Create a tomcat for QAServer and ProdServer
+     docker_container:
+      image: tomcat
+      name: "{{item.a}}"
+      ports:
+       - "{{item.b}}"
+      links:
+       - myjenkins:jenkins
+     with_items:
+      - {a: qaserver,b: "6060:8080"}
+      - {a: prodserver,b: "7070:8080"}
+

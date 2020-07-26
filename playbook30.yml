@@ -1,0 +1,13 @@
+---
+- name: Downlaod docker images
+  hosts: all
+  tasks:
+   - name: Docker docker images
+     docker_image:
+      name: "{{item}}"
+     with_items:
+      - httpd
+      - nginx
+      - centos
+      - jenkins
+

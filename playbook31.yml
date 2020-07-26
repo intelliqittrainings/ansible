@@ -1,0 +1,14 @@
+---
+- name: Login into hub.docker.com and push a customised docker image
+  hosts: 172.31.36.172
+  tasks:
+   - name: Login into docker hub
+     docker_login:
+      username: sai
+      password: sai123
+      email: intelliqit@gmail.com
+   - name: Push the image
+     docker_image:
+      name: intelliqit/ubuntu_july16
+      push: yes
+
